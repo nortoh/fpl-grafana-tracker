@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+ fpl-grafana-tracker:
+    container_name: fpl-grafana-tracker
+    restart: unless-stopped
+    image: fpl-grafana-tracker:latest
+    build: .
+    user: 1000:1000
+    volumes:
+        - ./data/:/app/data/
+        - ./logs/:/app/logs/
